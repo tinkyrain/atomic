@@ -6,10 +6,10 @@ type TProps = {
     counter: number
 };
 
-const CounterText: React.FC = ({counter}: TProps): JSX.Element => (
+const CounterText = ({counter}: TProps): JSX.Element => (
     <div>
         <Text>
-            { counter }
+            <span>{counter}</span>
         </Text>
     </div>
 );

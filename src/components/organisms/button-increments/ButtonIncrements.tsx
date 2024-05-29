@@ -1,17 +1,19 @@
 import React from "react";
-import {useCounter} from "@/hooks/counter-hook";
 import CounterText from "@/components/molecules/counter-text/CounterText";
 import ButtonText from "@/components/molecules/button-text/ButtonText";
 
+type TProps = {
+    index: number,
+    increment: Function,
+    decrement: Function
+};
 
-
-const ButtonIncrement: React.FC = (): JSX.Element => {
-    const counter = useCounter(0);
+const ButtonIncrement = ({index, increment, decrement}: TProps): JSX.Element => {
     return (
         <>
-            <CounterText counter={counter.index}/>
-            <ButtonText onClick={counter.increment}>increment</ButtonText>
-            <ButtonText onClick={counter.decrement}>decrement</ButtonText>
+            <CounterText counter={index}/>
+            <ButtonText onClick={increment}>increment</ButtonText>
+            <ButtonText onClick={decrement}>decrement</ButtonText>
         </>
     );
 };

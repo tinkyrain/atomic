@@ -4,7 +4,7 @@ type TProps = {
     children: React.ReactNode;
 };
 
-const Text: React.FC = ({ children }: TProps): JSX.Element => (
+const Text = ({ children }: TProps): JSX.Element => (
     <span>
         {children}
     </span>

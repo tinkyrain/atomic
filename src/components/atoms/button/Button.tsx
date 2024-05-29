@@ -4,7 +4,7 @@ type TProps = {
     children: React.ReactNode,
 };
 
-const Button: React.FC = ({ children, ...props }: TProps): JSX.Element =>
+const Button = ({ children, ...props }: TProps): JSX.Element =>
     (
         <button
             {...props}
