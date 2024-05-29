@@ -1,17 +1,15 @@
 import React from "react";
 import CounterText from "@/components/molecules/counter-text/CounterText";
 import ButtonText from "@/components/molecules/button-text/ButtonText";
+import {useCounter} from "@/hooks/counter-hook";
 
-type TProps = {
-    index: number,
-    increment: Function,
-    decrement: Function
-};
+const ButtonIncrement = (): JSX.Element => {
 
-const ButtonIncrement = ({index, increment, decrement}: TProps): JSX.Element => {
+    const {index, increment, decrement} = useCounter(0);
+
     return (
         <>
-            <CounterText counter={index}/>
+            <CounterText>{index}</CounterText>
             <ButtonText onClick={increment}>increment</ButtonText>
             <ButtonText onClick={decrement}>decrement</ButtonText>
         </>

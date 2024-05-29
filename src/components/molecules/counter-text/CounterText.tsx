@@ -3,13 +3,15 @@ import React from "react";
 import Text from '@/components/atoms/text/Text'
 
 type TProps = {
-    counter: number
+    children: React.ReactNode
 };
 
-const CounterText = ({counter}: TProps): JSX.Element => (
+const CounterText = ({children, ...props}: TProps): JSX.Element => (
     <div>
         <Text>
-            <span>{counter}</span>
+            <span {...props}>
+                {children}
+            </span>
         </Text>
     </div>
 );
